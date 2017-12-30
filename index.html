@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hana Sebel</title>
+  <link rel="stylesheet" href="https://rawcss.com/raw.css">
+  <style>
+    @font-face { font-family: "JD";src: url("/j.d.ttf"); }
+    body { font-size: 1.8rem; }
+    h1 { font-family: "JD", sans-serif;font-size: 2em; }
+    aside { position: absolute;top: 0;left: 0;margin: 20px; }
+    main { width: calc(100vw - 80px);height: calc(100vh - 80px);margin: 40px; }
+    main div { position: absolute;bottom: 0;left: 0;width: 100vw;height: 40px; }
+  </style>
+</head>
+
+<body>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KR74ZZ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KR74ZZ');</script>
+  <!-- End Google Tag Manager -->
+
+  <aside column>
+    <h1>Hana Sebelova</h1>
+    <span><a href="mailto:hanasebel@gmail.com">hanasebel@gmail.com</a></span>
+    <span><a href="https://www.instagram.com/han_van_sebel/">Instagram</a></span>
+  </aside>
+
+  <main row center>
+    <img src="/1.jpg" />
+    <div row center>
+      <button onclick="document.querySelector('.current').innerText = Math.max(1, +document.querySelector('.current').innerText - 1);document.querySelector('img').src = '/' + document.querySelector('.current').innerText + '.jpg'"><</button>
+      <span class="current">1</span>/6
+      <button onclick="document.querySelector('.current').innerText = Math.min(6, +document.querySelector('.current').innerText + 1);document.querySelector('img').src = '/' + document.querySelector('.current').innerText + '.jpg'">></button>
+    </div>
+  </main>
+
+</body>
+
+</html>
