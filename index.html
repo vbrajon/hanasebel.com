@@ -12,7 +12,10 @@
     h1 { font-family: "JD", sans-serif;font-size: 2em; }
     aside { position: absolute;top: 0;left: 0;margin: 20px; }
     main { width: calc(100vw - 80px);height: calc(100vh - 80px);margin: 40px; }
-    main div { position: absolute;bottom: 0;left: 0;width: 100vw;height: 40px; }
+    main div { position: absolute;bottom: 0;left: 0;width: 100vw;height: 40px;font-family: "JD", sans-serif; }
+    main button { position: fixed;top: 0;width: 50vw;height: 100vh;font-size: 2em;font-family: "JD", sans-serif;background: none;border: none; }
+    main button:first-child { left: 0;text-align: left; }
+    main button:last-child { right: 0;text-align: right; }
   </style>
 </head>
 
@@ -29,8 +32,8 @@
 
   <aside column>
     <h1>Hana Sebelova</h1>
-    <span><a href="mailto:hanasebel@gmail.com">hanasebel@gmail.com</a></span>
-    <span><a href="https://www.instagram.com/han_van_sebel/">Instagram</a></span>
+    <span><a target="_blank" href="mailto:hanasebel@gmail.com">hanasebel@gmail.com</a></span>
+    <span><a target="_blank" href="https://www.instagram.com/han_van_sebel/">Instagram <small>/han_van_sebel</small></a></span>
   </aside>
 
   <main row center>
