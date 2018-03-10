@@ -5,17 +5,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hana Sebel</title>
-  <link rel="stylesheet" href="https://rawcss.com/raw.css">
+  <link href="https://cdn.rawgit.com/vbrajon/rawcss/227a429182f3cb570b0bac4cd91edff8098597cf/raw.css" rel="stylesheet">
   <style>
     @font-face { font-family: "JD";src: url("/j.d.ttf"); }
     body { font-size: 1.8rem; }
     h1 { font-family: "JD", sans-serif;font-size: 2em; }
-    aside { position: absolute;top: 0;left: 0;margin: 20px; }
+    aside { position: absolute;top: 0;left: 0;padding: 20px; }
     main { width: calc(100vw - 80px);height: calc(100vh - 80px);margin: 40px; }
     main div { position: absolute;bottom: 0;left: 0;width: 100vw;height: 40px;font-family: "JD", sans-serif; }
     main button { position: fixed;top: 0;width: 50vw;height: 100vh;font-size: 2em;font-family: "JD", sans-serif;background: none;border: none; }
     main button:first-child { left: 0;text-align: left; }
     main button:last-child { right: 0;text-align: right; }
+    @media (max-width: 600px) {
+      body { font-size: 1.4rem; }
+      aside { padding: 10px;width: 100%;text-align: center; }
+    }
   </style>
 </head>
 
