@@ -21,6 +21,11 @@
       })(window, document, 'script', 'dataLayer', 'GTM-KR74ZZ')
     </script>
     <!-- End Google Tag Manager -->
+    <script>
+      const router = () => document.body.className = location.hash.replace('#', 'route-')
+      window.addEventListener('popstate', router)
+      router()
+    </script>
 
     <style>
       @import "https://fonts.googleapis.com/css?family=Montserrat:400,800";
@@ -28,27 +33,49 @@
       * { margin: 0;color: #222; }
       svg { height: 1em; }
       img { max-width: 100%;max-height: 100%; }
-      body { display: flex;flex-direction: column;max-width: 1200px;min-height: 100vh;margin: auto;padding: 0 20px;font: 400 18px/1.2 Montserrat, sans-serif;letter-spacing: -0.02em; }
-      h1 { font: 400 80px/1.2 "JD";color: white;display: flex;flex-direction: column;align-items: center;margin: auto; }
-      h1 small { font: 400 40px/1 "JD";color: white; }
-      h1 button { cursor: pointer;font: 400 40px/1 "JD";color: white;margin: 20px;padding: 12px 30px 8px;background: none;border: 4px solid white;border-radius: 65px;transition: all .3s cubic-bezier(.4,0,.2,1);-webkit-appearance: none;outline: none; }
+      body { display: flex;flex-direction: column;font: 400 18px/1.2 Montserrat, sans-serif;letter-spacing: -0.02em; }
+      .page-1 { z-index: 1;display: none;opacity: 0; }
+      body[class*="route-"] h1 { opacity: 0; }
+      body[class*="route-"] .page-1 { display: flex;opacity: 1; }
+      body[class*="route-"] .contact svg { fill: #444; }
+      h1 { position: absolute;top: 0;left: 0;width: 100%;height: 100%;font: 400 8vmax/1.2 "JD";letter-spacing: -0.04em;color: white;display: flex;flex-direction: column;align-items: center;justify-content: center;transition: all .5s cubic-bezier(.4,0,.2,1); }
+      h1 small { font: 400 5vmax/1 "JD";color: white; }
+      h1 button { cursor: pointer;font: 400 5vmax/1 "JD";color: white;margin: 20px;padding: 12px 30px 8px;background: none;border: 4px solid white;border-radius: 65px;transition: all .3s cubic-bezier(.4,0,.2,1);outline: none;-webkit-appearance: none; }
       h1 button:hover { background: white;color: #222; }
-      img { z-index: -1;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;animation: gray 3s cubic-bezier(.4,0,.2,1) infinite alternate; }
+      h1 img { z-index: -1;position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: cover;animation: gray 3s cubic-bezier(.4,0,.2,1) infinite alternate; }
       @keyframes gray { from { filter: grayscale(1); } to { filter: grayscale(0); } }
-      .contact { position: absolute;bottom: 20px;right: 30px;font-size: 60px; }
+      .contact { z-index: 1;position: absolute;bottom: 20px;right: 30px;font-size: 40px;transition: all .5s cubic-bezier(.4,0,.2,1); }
       .contact a { display: inline-flex; }
       .contact svg { fill: white; }
+      .page-1 > img { position: absolute;max-width: 40vw;height: 80vh;object-fit: cover;bottom: 0;left: 0; }
+      .logo { width: 100px;height: 100px;margin: 20px; }
+      .text { z-index: 1;position: absolute;top: 6vw;right: 0;width: calc(100vw - 140px);max-width: 800px;max-height: fit-content; }
+      .statement { margin-left: auto;max-width: calc(60vw - 80px);padding: 40px;line-height: 1.6; }
+      .quote { padding: 20px;background: #EEE;font-size: 14px;line-height: 1.4;font-style: italic; }
+      .statement::before, .quote :first-child::before { content: "“";position: relative;top: .2em;padding-right: .2em;color: #444;font-size: 1.8em;line-height: .5em; }
+      .statement::after, .quote :first-child::after { content: "”";position: relative;top: .2em;color: #444;font-size: 1.8em;line-height: .5em; }
+      .author { float: right; }
     </style>
 
     <h1>
       Hana Sebel
       <small>Portrait Painter</small>
-      <button>Enter</button>
+      <button onclick="location.hash = 'enter'">Enter</button>
+      <img src="/1.jpg" />
     </h1>
 
-    <img src="/1.jpg" />
-
-    <!-- <div class="quote">“Hana Šebelová explores the duality in the portrait, the deposited psychology of intimacy and reality that surrounds it. Based on the portrait away from the notion of artistic genre to conceive as container conceptions of identity.”<div class="author">Pablo Villaizán</div></div> -->
+    <div class="page-1">
+      <a class="logo" href="#"><img src="/logo.png" /></a>
+      <div class="text">
+        <div class="quote">
+          <div>Hana Šebelová explores the duality in the portrait, the deposited psychology of intimacy and reality that surrounds it. Based on the portrait away from the notion of artistic genre to conceive as container conceptions of identity.</div>
+          <div class="author">Pablo Villaizán</div>
+        </div>
+        <div class="statement">As far as I remember I felt a passion for portraits, attracted by eyes that are speaking their own story. The look speaks about things that we can contemplate emotionally but can't analyze or describe with words.
+This is exactly the space that I like to explore... going behind the curtain of consciousness and transmit the mystery of the soul.</div>
+      </div>
+      <img src="/2.jpg" />
+    </div>
 
     <div class="contact">
       <a target="_blank" href="mailto:hanasebel@gmail.com"><svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg></a>
